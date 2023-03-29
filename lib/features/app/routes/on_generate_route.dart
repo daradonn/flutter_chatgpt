@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chatgpt/features/app/app_const/page_const.dart';
 import 'package:flutter_chatgpt/features/image_generation/presentation/pages/image_generation_page.dart';
+import 'package:flutter_chatgpt/features/text_completion/presentation/pages/text_assistant_page.dart';
 import 'package:flutter_chatgpt/features/text_completion/presentation/pages/text_completion_page.dart';
 
 class OnGenerateRoute {
@@ -24,6 +25,12 @@ class OnGenerateRoute {
         {
           return materialBuilder(
             widget: TextCompletionPage(),
+          );
+        }
+      case PageConst.textAssistantPage:
+        {
+          return materialBuilder(
+            widget: TextAssistantPage(),
           );
         }
       default:

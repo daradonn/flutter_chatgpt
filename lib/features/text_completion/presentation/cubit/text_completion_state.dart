@@ -13,10 +13,19 @@ class TextCompletionLoading extends TextCompletionState {
   @override
   List<Object> get props => [];
 }
+
 class TextCompletionLoaded extends TextCompletionState {
   final TextCompletionModel textCompletionModelData;
 
   TextCompletionLoaded({required this.textCompletionModelData});
+  @override
+  List<Object> get props => [];
+}
+
+class TextCompletionLoadedTurbo extends TextCompletionState {
+  final TextCompletionModelTurbo textCompletionModelTurboData;
+
+  TextCompletionLoadedTurbo({required this.textCompletionModelTurboData});
   @override
   List<Object> get props => [];
 }

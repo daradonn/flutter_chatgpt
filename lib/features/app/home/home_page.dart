@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_chatgpt/features/app/app_const/page_const.dart';
 import 'package:flutter_chatgpt/features/app/home/widgets/home_button_widget.dart';
@@ -43,9 +41,22 @@ class HomePage extends StatelessWidget {
                     Navigator.pushNamed(context, PageConst.textCompletionPage);
                   },
                 ),
+                SizedBox(
+                  height: 30,
+                ),
+                HomeButtonWidget(
+                  textData: "Text Assistant - OpenAI",
+                  iconData: Icons.text_fields_outlined,
+                  onTap: () {
+                    Navigator.pushNamed(context, PageConst.textAssistantPage);
+                  },
+                )
               ],
             ),
-            Text("ChatGPT: Optimizing Language Models for Dialogue",style: TextStyle(color: Colors.grey),),
+            Text(
+              "ChatGPT: Optimizing Language Models for Dialogue",
+              style: TextStyle(color: Colors.grey),
+            ),
           ],
         ),
       ),

@@ -5,14 +5,14 @@ import 'package:flutter_chatgpt/features/global/search_text_field/search_text_fi
 import 'package:flutter_chatgpt/features/text_completion/presentation/cubit/text_completion_cubit.dart';
 import 'package:share_plus/share_plus.dart';
 
-class TextCompletionPage extends StatefulWidget {
-  const TextCompletionPage({Key? key}) : super(key: key);
+class TextAssistantPage extends StatefulWidget {
+  const TextAssistantPage({Key? key}) : super(key: key);
 
   @override
-  State<TextCompletionPage> createState() => _TextCompletionPageState();
+  State<TextAssistantPage> createState() => _TextAssistantPageState();
 }
 
-class _TextCompletionPageState extends State<TextCompletionPage> {
+class _TextAssistantPageState extends State<TextAssistantPage> {
   TextEditingController _searchTextController = TextEditingController();
 
   @override
@@ -20,6 +20,7 @@ class _TextCompletionPageState extends State<TextCompletionPage> {
     _searchTextController.addListener(() {
       setState(() {});
     });
+    _clearTextField();
     super.initState();
   }
 
@@ -33,7 +34,7 @@ class _TextCompletionPageState extends State<TextCompletionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Text Completion Page"),
+        title: Text("Text Assistant Page"),
       ),
       body: Center(
         child: Column(children: [
@@ -153,7 +154,7 @@ class _TextCompletionPageState extends State<TextCompletionPage> {
 
                 return Center(
                     child: Text(
-                  "OpenAI Text Completion",
+                  "OpenAI Text Assistant",
                   style: TextStyle(fontSize: 20, color: Colors.grey),
                 ));
               },
@@ -164,7 +165,7 @@ class _TextCompletionPageState extends State<TextCompletionPage> {
               onTap: () {
                 BlocProvider.of<TextCompletionCubit>(context)
                     .textCompletionTurbo(
-                        query: _searchTextController.text, role: "user")
+                        query: _searchTextController.text, role: "assistant")
                     .then((value) => _clearTextField());
               }),
           SizedBox(
